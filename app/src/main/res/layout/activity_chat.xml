@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:previewImage"
+    tools:context=".ChatActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="?attr/color"
+
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/light"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+
+            android:layout_marginStart="5dp"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:src="@drawable/baseline_arrow_back_24">
+
+        </ImageView>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/udp"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center"
+
+            android:src="@drawable/ic_launcher_background"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User Name"
+                android:textColor="@color/light"
+                android:textSize="17.5sp"
+                android:fontFamily="sans-serif-medium"
+                >
+
+            </TextView>
+            <TextView
+                android:id="@+id/lastseen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light"
+                android:text="last seen at 12:00"
+                android:textSize="13.5sp"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            ></View>
+        <ImageButton
+
+
+            android:scaleX="0.68"
+            android:scaleY="0.68"
+            android:layout_width="42dp"
+            android:layout_marginEnd="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/video_camera_fill_svgrepo_com"
+            android:scaleType="centerCrop"
+
+            android:background="@drawable/ripple2"
+            android:tint="@color/light"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+        </ImageButton>
+        <ImageButton
+
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/phone_svgrepo_com"
+            android:scaleType="centerCrop"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple2"
+            android:tint="@color/light">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/chatmenu"
+
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/menu"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple2"
+            android:tint="@color/light">
+
+        </ImageButton>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="5dp"
+
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="4dp"
+
+            android:layout_weight="1"
+android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            app:cardCornerRadius="35dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/camera"></ImageView>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:hint="Message"
+                    android:textColorHint="#87939C"
+
+
+                    ></EditText>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/send_bg"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            ></ImageView>
+    </LinearLayout>
+</RelativeLayout>

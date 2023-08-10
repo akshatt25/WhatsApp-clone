@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtpActivity"
+    >
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/back"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:tint="#838383">
+
+    </ImageView>
+
+
+
+    <TextView
+        android:layout_below="@id/back"
+        android:id="@+id/otpt"
+        android:layout_marginTop="250dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTP is sent on +911234567890"
+        android:layout_centerHorizontal="true"
+        ></TextView>
+    <EditText
+
+        android:layout_below="@id/otpt"
+        android:id="@+id/otp"
+        android:inputType="number"
+        android:background="@drawable/round"
+        android:layout_marginTop="25dp"
+        android:hint="Enter OTP "
+        android:textColorHint="#838383"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="center"
+
+        android:paddingStart="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:maxLength="6">
+
+    </EditText>
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otp"
+        android:layout_alignEnd="@id/otp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:text="Resend OTP">
+
+    </TextView>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otp"
+        android:layout_alignStart="@id/otp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        android:text="Wait for 90s">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="VERIFY NUMBER"
+        android:textSize="14sp"
+        android:backgroundTint="?attr/colorButtonNormal"
+        android:textColor="@color/light"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/otp">
+
+    </Button>
+    <RelativeLayout
+        android:id="@+id/lay2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7C6E6E6E"
+        >
+
+    </RelativeLayout>
+
+</RelativeLayout>

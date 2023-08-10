@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Whatsapp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/light</item>
+        <item name = "android:statusBarColor">@color/dark</item>>
+        <item name="android:textColor">@color/dark</item>
+        <item name="colorPrimary">@color/light</item>
+        <item name="colorSecondary">@color/tealg</item>
+        <item name="colorAccent">@color/dark</item>
+        <item name="colorButtonNormal">@color/greenl</item>
+        <item name="color">@color/greenl</item>
+        <item name="android:textColorSecondary">@color/light</item>
+        <item name="android:textColorTertiary">@color/light</item>
+        <item name="android:textColorTertiaryInverse">#C9EBE9E9</item>
+        <item name="android:textColorSecondaryInverse">@color/lightg</item>
+        <item name="android:previewImage">@drawable/bgl</item>
+
+
+
+
+
+    </style>
+
+    <style name="Theme.Whatsapp" parent="Base.Theme.Whatsapp" >
+    </style>
+
+
+
+
+
+</resources>

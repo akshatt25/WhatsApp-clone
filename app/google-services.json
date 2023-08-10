@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147680788566",
+    "project_id": "waclone25",
+    "storage_bucket": "waclone25.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147680788566:android:4dc23d4525d5be52357bf7",
+        "android_client_info": {
+          "package_name": "com.example.whatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147680788566-v9cdso5grj8sehtpbusmi2unlrlj1i6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4TvMCpFZFrg0JYKarwMv0jZG8kCt4CwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147680788566-v9cdso5grj8sehtpbusmi2unlrlj1i6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+
+    <item>
+        <shape >
+            <solid android:color="@color/tealg" />
+            <!--    <stroke android:color="?attr/colorAccent"-->
+            <!--        android:width="1dp"/>-->
+            <corners android:radius="500dp"/>
+            <size
+                android:width="52dp"
+                android:height="52dp">
+
+            </size>
+
+        </shape>
+    </item>
+    <item
+
+        android:drawable="@drawable/mic_svgrepo_com"
+        android:width="22dp"
+        android:height="22dp"
+        android:gravity="center"
+        >
+
+    </item>
+
+
+</layer-list>

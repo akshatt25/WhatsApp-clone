@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:elevation="10dp"
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingBottom="2dp"
+        android:background="?attr/color"
+        android:layout_alignParentTop="true"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="WhatsApp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+           android:textColor="?android:textColorSecondary"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical"
+
+            ></TextView>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <ImageButton
+
+
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            android:layout_width="42dp"
+            android:layout_marginEnd="5dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/camera"
+            android:background="@drawable/ripple"
+            android:tint="?android:textColorSecondary"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            >
+
+        </ImageButton>
+        <ImageButton
+
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+
+
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/search"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple"
+            android:tint="?android:textColorSecondary">
+
+        </ImageButton>
+        <ImageButton
+            android:id="@+id/chatmenu"
+
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            android:layout_width="42dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/menu"
+android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple"
+            android:tint="?android:textColorSecondary">
+
+        </ImageButton>
+
+
+    </LinearLayout>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:background="?attr/color"
+        app:tabTextColor="?android:textColorTertiaryInverse"
+        app:tabRippleColor="#52A8A7A7"
+        app:tabMode="fixed"
+        app:tabIndicatorColor="?android:textColorTertiary"
+        app:tabSelectedTextColor="?android:textColorTertiary"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorFullWidth="true"
+        android:elevation="10dp"
+        >
+
+
+
+        <com.google.android.material.tabs.TabItem
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chats"
+            />
+
+        <com.google.android.material.tabs.TabItem
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status" />
+
+        <com.google.android.material.tabs.TabItem
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calls" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:name="com.example.netclan.Refine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tab"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+
+
+</RelativeLayout>

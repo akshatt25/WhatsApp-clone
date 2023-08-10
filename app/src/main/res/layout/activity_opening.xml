@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Opening">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="322dp"
+            android:layout_marginLeft="50dp"
+
+            android:layout_marginTop="75dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/open">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_below="@id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="?attr/colorAccent"
+            android:text="Welcome To WhatsApp">
+        </TextView>
+        <TextView
+            android:textColor="#838383"
+            android:id="@+id/terms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read our Privacy Policy. Tap Agree and continue to
+accept the Terms of Service"
+            android:gravity="center"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/welcomeText"
+            android:layout_centerHorizontal="true">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/cont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Agree and continue"
+            android:textSize="15dp"
+
+            android:backgroundTint="?attr/colorButtonNormal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:textColor="@color/light"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/terms"
+            android:layout_marginTop="30dp"
+            >
+
+        </Button>
+
+    </RelativeLayout>
+
+</ScrollView>

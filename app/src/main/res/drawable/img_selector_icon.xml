@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+
+    <item>
+    <shape >
+        <solid android:color="#329E9E9E" />
+        <!--    <stroke android:color="?attr/colorAccent"-->
+        <!--        android:width="1dp"/>-->
+        <corners android:radius="1dp"/>
+
+    </shape>
+    </item>
+    <item
+
+        android:drawable="@drawable/cam1"
+        android:width="100dp"
+        android:height="100dp"
+        android:bottom="100dp"
+        android:right="100dp"
+        android:left="100dp"
+        android:top="100dp"
+        >
+
+    </item>
+
+
+</layer-list>

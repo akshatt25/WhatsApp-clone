@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetProfile">
+    <TextView
+        android:id="@+id/profileInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:textSize="17dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="?attr/colorSecondary"
+        android:text="Profile Info">
+    </TextView>
+    <TextView
+        android:id="@+id/profileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please provide your name and an optional profile photo"
+        android:textColor="#838383"
+        android:layout_below="@id/profileInfo"
+        android:textSize="14dp"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp">
+
+    </TextView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectphoto"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/profileText"
+        android:layout_centerHorizontal="true"
+       android:src="@drawable/img_selector_icon"
+        android:background="@drawable/round3"
+        android:layout_marginTop="40dp"
+        android:tint="#7E979797"
+
+        tools:ignore="UseAppTint"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectphoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:maxLength="25"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@color/tealg"
+        android:textCursorDrawable="@drawable/color_green"
+
+        android:hint="Type your name here" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="15dp"
+        android:backgroundTint="?attr/colorButtonNormal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        ></Button>
+<!--progress dialog-->
+    <RelativeLayout
+        android:id="@+id/lay2"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#943A3A3A"
+        >
+        <LinearLayout
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+
+            android:background="@drawable/round2">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+
+                >
+
+            </ProgressBar>
+            <TextView
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Creating Profile"
+                >
+
+            </TextView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
