@@ -20,9 +20,9 @@
     </item>
     <item
 
-        android:drawable="@drawable/mic_svgrepo_com"
-        android:width="22dp"
-        android:height="22dp"
+        android:drawable="@drawable/send_svgrepo_com"
+        android:width="30dp"
+        android:height="30dp"
         android:gravity="center"
         >
 

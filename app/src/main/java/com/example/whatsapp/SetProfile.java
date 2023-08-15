@@ -110,7 +110,7 @@ public class SetProfile extends AppCompatActivity {
                     String uid =auth.getUid();
                     String  username = binding.username.getText().toString();
                     String phoneNumber = auth.getCurrentUser().getPhoneNumber();
-                    String imageUrl = "No Image";
+                    String imageUrl = "https://firebasestorage.googleapis.com/v0/b/waclone25.appspot.com/o/Profiles%2Fimage.png?alt=media&token=e9adb290-95c4-432e-b516-65d5ef2ef83d";
 
 
                     User user = new User(uid,username,phoneNumber,imageUrl);

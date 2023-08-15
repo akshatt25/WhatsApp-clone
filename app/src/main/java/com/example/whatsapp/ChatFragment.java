@@ -40,7 +40,7 @@ public class ChatFragment extends Fragment {
     private String mParam2;
     RecyclerView chatRecyc;
 
-    ArrayList<User> cList;
+
     FirebaseDatabase database;
 
     public ChatFragment() {
@@ -71,21 +71,17 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
-        cList=new ArrayList<>();
-        chatRecyc = view.findViewById(R.id.chatRecyc);
-        chatRecyc.setLayoutManager(new LinearLayoutManager(getContext()));
-        ChatAdapter chatAdapter = new ChatAdapter(DatabaseHelper.getAllUsers(getActivity()),getActivity());
-        chatRecyc.setAdapter(chatAdapter);
-
         database=FirebaseDatabase.getInstance();
         SharedPreferences preferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String userUid = preferences.getString("userUid", null);
 
-
+        chatRecyc = view.findViewById(R.id.chatRecyc);
+        chatRecyc.setLayoutManager(new LinearLayoutManager(getContext()));
+        ChatAdapter chatAdapter = new ChatAdapter(DatabaseHelper.getAllUsers(getActivity()),getActivity());
         database.getReference().child("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                cList.clear();
+
                 for (DataSnapshot snapshot1 : snapshot.getChildren())
                 {
                     User user = snapshot1.getValue(User.class);
@@ -100,11 +96,18 @@ public class ChatFragment extends Fragment {
 
             }
 
+
+
+
+
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+        chatRecyc.setAdapter(chatAdapter);
+
 
         return view;
     }

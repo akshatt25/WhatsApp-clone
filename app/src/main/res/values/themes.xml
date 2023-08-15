@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Whatsapp" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/light</item>
-        <item name = "android:statusBarColor">@color/dark</item>>
+        <item name = "android:statusBarColor">@color/greenl</item>>
         <item name="android:textColor">@color/dark</item>
         <item name="colorPrimary">@color/light</item>
         <item name="colorSecondary">@color/tealg</item>
@@ -14,11 +14,7 @@
         <item name="android:textColorTertiaryInverse">#C9EBE9E9</item>
         <item name="android:textColorSecondaryInverse">@color/lightg</item>
         <item name="android:previewImage">@drawable/bgl</item>
-
-
-
-
-
+        <item name="android:textColorPrimaryInverse">#e7ffdb</item>
     </style>
 
     <style name="Theme.Whatsapp" parent="Base.Theme.Whatsapp" >

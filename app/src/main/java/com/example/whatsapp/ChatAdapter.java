@@ -1,17 +1,24 @@
 package com.example.whatsapp;
 
+import static com.google.common.reflect.Reflection.getPackageName;
+
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHolder> {
@@ -36,17 +43,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
         User obj = cList.get(position);
 
         holder.cname.setText(obj.getName());
-        if (obj.getProfileImage().compareTo("No Image")==0) {
-           Glide.with(context)
-                   .load("https://firebasestorage.googleapis.com/v0/b/waclone25.appspot.com/o/Profiles%2Fuser.png?alt=media&token=ba4fc0b1-a42b-4d85-aa18-2e590ad9925d")
-                   .into(holder.cdp);
-
-        } else{
-            Glide.with(context)
-                    .load(obj.getProfileImage())
-                    .into(holder.cdp);
-
-        }
+        Glide.with(context)
+                .load(obj.getProfileImage())
+                .into(holder.cdp);
         //opens chatActivity
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +57,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
                 context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -73,6 +70,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
         TextView cmsg;
         TextView nofmsg;
         ImageView read;
+        TextView ctime;
+        LinearLayout laylin;
 
         MessageViewHolder(View itemView) {
             super(itemView);
@@ -81,6 +80,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
             cmsg = itemView.findViewById(R.id.cmsg);
             nofmsg = itemView.findViewById(R.id.noofmsg);
             read = itemView.findViewById(R.id.read);
+            ctime=itemView.findViewById(R.id.ctime);
+            laylin=itemView.findViewById(R.id.laylin);
 
         }
     }

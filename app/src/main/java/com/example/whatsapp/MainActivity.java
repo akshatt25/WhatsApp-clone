@@ -40,7 +40,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseFirestore firestore;
     Toolbar toolbar;
+    String date;
+    String time;
+    Timer timer;
 
 
     @Override
@@ -60,42 +67,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userUid = preferences.getString("userUid", null);
-
+        database = FirebaseDatabase.getInstance();
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference("users");
         DatabaseReference userRef = usersRef.child(userUid);
+        timer = new Timer();
+        timer.schedule(new UpdateFirebaseTask(), 0, 5000); // 60000 milliseconds = 1 minute
 
 
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()) {
-//                    String profileImageUrl = dataSnapshot.child("profileImage").getValue(String.class);
-//
-//                    // Load and display the image using Glide library
-//                    Glide.with(MainActivity.this)
-//                            .load(profileImageUrl)
-//
-//                            .into(binding.dp);
-//                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle the error here
-            }
-        });
-//        binding.opencam.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-//        binding.searchChats.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
         binding.chatmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,8 +112,10 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(new ChatFragment());
         viewPagerAdapter.addFragment(new StatusFragment());
         viewPagerAdapter.addFragment(new CallsFragment());
+
         binding.viewpager.setAdapter(viewPagerAdapter);
         binding.viewpager.setUserInputEnabled(true);
+        binding.viewpager.setCurrentItem(0);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(binding.tab, binding.viewpager,
                 (tab, position) -> {
                     switch (position) {
@@ -151,11 +131,68 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
         tabLayoutMediator.attach();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
 
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
 
+    }
+    protected void onPause() {
+        super.onPause();
+
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+
+    }
+    protected void onResume() {
+        super.onResume();
+
+        if (timer == null) {
+            timer = new Timer();
+            timer.schedule(new UpdateFirebaseTask(), 0, 5000);
+        }
+    }
+
+    private class UpdateFirebaseTask extends TimerTask {
+        @Override
+        public void run() {
+            // Update the "last seen" value in Firebase
+            updateLastSeen();
+        }
+    }
+    public void updateLastSeen()
+    {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            int year = currentDateTime.getYear();
+            int month = currentDateTime.getMonthValue();
+            String formattedMonth = String.format("%02d", month);
+            int day = currentDateTime.getDayOfMonth();
+            String formattedDay = String.format("%02d", day);
+            int hour = currentDateTime.getHour();
+            String formattedHour = String.format("%02d", hour);
+            int minute = currentDateTime.getMinute();
+            String formattedMinute = String.format("%02d", minute);
+            date = String.valueOf(formattedDay)+"/"+String.valueOf(formattedMonth)+"/"+String.valueOf(year);
+            time = String.valueOf(formattedHour)+":"+String.valueOf(formattedMinute);
+
+        }
+        LastSeen lastSeen = new LastSeen(date,time);
+//
+        database.getReference()
+                .child("lastseen")
+                .child(FirebaseAuth.getInstance().getUid())
+                .setValue(lastSeen);
     }
 
 
 
-
 }
+

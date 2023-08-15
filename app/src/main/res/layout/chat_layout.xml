@@ -11,7 +11,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-
+        android:padding="1dp"
         android:src="@drawable/ic_launcher_background"
         />
     <LinearLayout
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             >
             <ImageView
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginEnd="5dp"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/read"
@@ -71,6 +71,8 @@
         android:layout_marginEnd="10dp"
         android:layout_weight="1"></View>
     <LinearLayout
+        android:id="@+id/laylin"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
